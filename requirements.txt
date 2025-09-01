@@ -1,7 +1,21 @@
+# --- Core app ---
 streamlit==1.28.1
 streamlit-webrtc==0.47.1
-opencv-python-headless==4.8.1.78
-mediapipe==0.10.5
-numpy==1.24.3
-pillow==10.0.1
+
+# --- Video/WebRTC stack ---
+# aiortc + pylibsrtp จำเป็นสำหรับ WebRTC บนเซิร์ฟเวอร์
+aiortc==1.7.1
+pylibsrtp==0.10.0
 av==10.0.0
+
+# --- CV / ML stack ---
+# เวอร์ชันพวกนี้เข้าชุดกันบน manylinux + Python 3.10/3.11
+opencv-python-headless==4.8.1.78
+numpy==1.24.3
+
+# mediapipe มักต้องการ protobuf ช่วง 3.20.x–<4.24 เพื่อความชัวร์ให้ pin เลย
+mediapipe==0.10.5
+protobuf==3.20.3
+
+# --- Image utils ---
+pillow==10.0.1
